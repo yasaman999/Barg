@@ -1,26 +1,30 @@
-import { lesan, MongoClient, string, number, date,boolean, InRelation, OutRelation, object, ActFn, optional } from "https://deno.land/x/lesan@v-11.0.66/mod.ts";
+import { string, number, date,boolean, InRelation, OutRelation, object, optional, array, define } from "../../../deps.ts";
+import { userPure } from "../user/user_mod.ts"
+import { positionPure } from "../position/position_mod.ts"
+import { reffers } from "../reffer/reffer_mod.ts"
 
 const letterPure = {
+    author : userAndPosition,
+    senders : array(userAndPosition),
+    recievers : array(userAndPosition),
     number : number(),
     subject : string(),
+    viewed : array(userAndPosition),
+    created_at : date(),
+    updated_at : date(),
     delivered : boolean(),
-    date : { 
-        created_at : date(),
-        updated_at : date()
-    },
     is_end : {
-        text : string(),//text||des ??
+        text : string(), // text || des ??
         done : boolean()
     },
     // attachment : file,
-    tags :[string()],
+    tags : array(string()),
     lid : string(),
+    reffers : array(reffer),
     
-
 }
-const letterInRel = {};
 
-const letterOutRel = {};
+const letterInRel : Record<string, InRelation> = {};
 
 
 export const letters = () =>
