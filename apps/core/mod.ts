@@ -9,6 +9,7 @@ import {
   users,
 } from "../../libs/dbs/schemas/core/mod.ts";
 // import { ecommerceActs} from "../ecommerce/mod.ts"
+import {dynamicSetup} from "./src/dynamics/mod.ts"
 
 export const coreApp = lesan();
 
@@ -25,6 +26,6 @@ await client.connect("mongodb://localhost:27017/barg");
 const db = client.database("barg");
 coreApp.odm.setDb(db);
 
-// dynamicSetup();
+dynamicSetup();
 
 coreApp.runServer({ port: 8000, typeGeneration: true, playground: false }); // ??

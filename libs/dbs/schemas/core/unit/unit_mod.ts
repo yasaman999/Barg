@@ -1,4 +1,6 @@
-import { string, number, InRelation, OutRelation, object, optional } from "../../../deps.ts";
+import { string, number, InRelation, OutRelation, object, array, optional } from "../../../deps.ts";
+
+import { coreApp } from "../../../../../apps/core/mod.ts";
 
 
 const unitPure = {

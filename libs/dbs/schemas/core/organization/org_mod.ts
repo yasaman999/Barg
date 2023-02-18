@@ -1,5 +1,7 @@
 import { string, InRelation, OutRelation, object, optional } from "../../../deps.ts";
 
+import { coreApp } from "../../../../../apps/core/mod.ts";
+
 
 const orgPure = {
 

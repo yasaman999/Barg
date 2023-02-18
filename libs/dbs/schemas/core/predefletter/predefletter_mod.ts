@@ -1,5 +1,7 @@
 import { string, number, InRelation, OutRelation, object, optional } from "../../../deps.ts";
 
+import { coreApp } from "../../../../../apps/core/mod.ts";
+
 const preDefLetterPure = {
     // id ?
     title : string(),
@@ -9,13 +11,13 @@ const preDefLetterPure = {
 }
 const preDefLetterInRel = {};
 
-const preDeLetterOutRel = {};
+const preDefLetterOutRel = {};
 
 
 export const preDefLetters = () =>
   coreApp.odm.setModel(
     "letter",
-    preDeLetterPure,
+    preDefLetterPure,
     preDefLetterInRel,
     preDefLetterOutRel ,
   );

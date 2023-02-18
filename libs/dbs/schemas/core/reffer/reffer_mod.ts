@@ -1,8 +1,10 @@
-import { string, number, date, boolean, InRelation, OutRelation, object, optional } from "../../../deps.ts";
+import { string, number, date, boolean, array, InRelation, OutRelation, object, enums, optional } from "../../../deps.ts";
+
+import { coreApp } from "../../../../../apps/core/mod.ts";
 
 const refferPure = {
-    refferer : userAndPosition,
-    reffered : userAndPosition,
+    // refferer : userAndPosition,
+    // reffered : userAndPosition,
     number : number(),
     delivered : boolean(),
     // actions :
