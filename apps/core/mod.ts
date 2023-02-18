@@ -21,6 +21,19 @@ export const unit = units();
 export const position = positions();
 export const reffer = reffers();
 
+export const {
+    setAct,
+    setService,
+    getAtcsWithServices,
+    getDynamicActs,
+} = coreApp.acts;
+
+export const {
+    selectStruct,
+    getSchemas,
+} = coreApp.schemas;
+
+
 const client = new MongoClient();
 await client.connect("mongodb://localhost:27017/barg");
 const db = client.database("barg");
