@@ -1,7 +1,6 @@
 
     export type userInp = {
-      org: number | orgInp
-unit: number | unitInp
+      
       
     }
 

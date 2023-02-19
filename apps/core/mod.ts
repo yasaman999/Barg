@@ -8,7 +8,6 @@ import {
   units,
   users,
 } from "../../libs/dbs/schemas/core/mod.ts";
-// import { ecommerceActs} from "../ecommerce/mod.ts"
 import {dynamicSetup} from "./src/dynamics/mod.ts"
 
 export const coreApp = lesan();

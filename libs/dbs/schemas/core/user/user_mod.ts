@@ -33,16 +33,16 @@ export const userPure = {
 };
 
 const userInRel: Record<string, InRelation> = {
-  org: {
-    schemaName: "org",
-    type: "one",
-    optional: false,
-  },
-  unit: {
-    schemaName: "unit",
-    type: "one",
-    optional: false,
-  },
+  // org: {
+  //   schemaName: "org",
+    // type: "one",
+  //   optional: false,
+  // },
+  // unit: {
+  //   schemaName: "unit",
+  //   type: "one",
+  //   optional: false,
+  // },
 };
 
 const userOutRel = {};

@@ -1,33 +1,40 @@
-import { ActFn } from "../../../../deps.ts";
+import { ActFn, ObjectId } from "../../../../deps.ts";
 import { getAtcsWithServices, user } from "../../../../mod.ts";
 export const addUserFn: ActFn = async (body) => {
     const acts = getAtcsWithServices();
 
-    /*
-  *  @LOG @DEBUG @INFO
-  *  This log written by ::==> {{ syd }}
-  *
-  *  Please remove your log after debugging
-  */
-    console.group("acts ------ inside addUserFn");
-    console.log(" ============= ");
-    console.log();
-    console.info(acts, " ------ ");
-    console.log();
-    console.log(" ============= ");
-    console.groupEnd();
-
     const {
-        set: { name, age },
+        set: { 
+        first_name,
+        last_name,
+        phone,
+        gender,
+        birth_date,
+        personnel_code,
+        email,
+        is_active,
+        features,
+        userLevels
+        },
         get,
+        
     } = body.details;
 
-    await user.insertOne({
-        name,
-        age,
+    const createdUser = await user.insertOne({
+        first_name,
+        last_name,
+        phone,
+        gender,
+        birth_date,
+        personnel_code,
+        email,
+        is_active,
+        features,
+        userLevels,
     });
 
-    return {
-        what: "what you said",
-    };
+    return Object.keys(get).length != 0
+    ? await user.findOne({ _id: new ObjectId(createdUser) }, get)
+    : { _id: createdUser };
+     
 };
