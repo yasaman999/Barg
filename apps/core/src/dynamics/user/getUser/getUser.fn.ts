@@ -10,11 +10,9 @@ export const getUserFn: ActFn = async (body) => {
         },
         get,
     } = body.details;
-    const foundedUser = await user.findOne({ _id: new ObjectId(_id) });
-    // foundedUser ? foundedUser : throwError("user not exist !");
+    const foundedUser = await user.findOne({ _id: new ObjectId(_id) }, get);
     !foundedUser && throwError("user not exist");
     return foundedUser;
-    // TODO QueryQueue for get for example ware
 
     console.log("foundedUser on get method", foundedUser);
     
