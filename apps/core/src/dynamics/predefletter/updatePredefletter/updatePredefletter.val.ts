@@ -11,6 +11,6 @@ export const updatePredefletterValidator = () => {
       description : string(),
       number : number()
     }),
-    get: selectStruct("predefletter", { predefletter: 1 }),
+    get: selectStruct("preDefLetter", { preDefLetter: 1 }),
   });
 };

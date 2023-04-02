@@ -1,4 +1,4 @@
-import { predefletterInp } from "../../../../declarations/selectInp.ts";
+import { preDefLetterInp } from "../../../../declarations/selectInp.ts";
 import { number, object, string, boolean, array, optional, enums, date } from "../../../../deps.ts";
 import { selectStruct } from "../../../../mod.ts";
 
@@ -9,6 +9,6 @@ export const addPredefletterValidator = () => {
             description : string(),
             number : number()
         }),
-        get: selectStruct<predefletterInp>("predefletter", 1),
+        get: selectStruct<preDefLetterInp>("preDefLetter", 1),
     });
 };

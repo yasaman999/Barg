@@ -7,6 +7,6 @@ export const getPredefletterValidator = () => {
     set: object({
       _id: string(), 
     }),
-    get: selectStruct("pedefletter", { predefletter : 1 }),
+    get: selectStruct("preDefLetter", { preDefLetter : 1 }),
   });
 };

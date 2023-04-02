@@ -16,7 +16,7 @@ const preDefLetterOutRel = {};
 
 export const preDefLetters = () =>
   coreApp.odm.setModel(
-    "letter",
+    "preDefLetter",
     preDefLetterPure,
     preDefLetterInRel,
     preDefLetterOutRel ,

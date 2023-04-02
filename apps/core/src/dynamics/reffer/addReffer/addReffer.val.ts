@@ -9,12 +9,13 @@ export const addRefferValidator = () => {
             delivered : boolean(),
             // actions :
             type : enums(['inUnit', 'inOrg', 'outOrg']),
-            created_at : date(),
-            updated_at : date(),
-            deadline : date(),
+            created_at : optional(date()),
+            updated_at : optional(date()),
+            deadline : optional(date()),
             isMoving : boolean(),
             description : array(object({text : string(), viewed : boolean()})),
-            reply : array(object({id : string(), text : string(), viewed : boolean(),
+            reply : array(object({id : string(), text : string(), 
+                viewed : boolean(),}))
         }),
         get: selectStruct<refferInp>("reffer", 1),
     });

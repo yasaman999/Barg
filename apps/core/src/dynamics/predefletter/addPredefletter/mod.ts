@@ -7,7 +7,7 @@ import { addPredefletterValidator } from "./addPredefletter.val.ts";
 export const addPredefletterSetup = () =>
     coreApp.acts.setAct({
         type: "dynamic",
-        schema: "predefletter",
+        schema: "preDefLetter",
         fn: addPredefletterFn,
         actName: "addPredefletter",
         validator: addPredefletterValidator(),

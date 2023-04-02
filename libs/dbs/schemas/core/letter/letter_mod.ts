@@ -12,13 +12,13 @@ const letterPure = {
     number : number(),
     subject : string(),
     // viewed : array(userAndPosition),
-    created_at : date(),
-    updated_at : date(),
+    created_at : optional(date()),
+    updated_at : optional(date()),
     delivered : boolean(),
-    is_end : {
+    is_end : object({
         text : string(), // text || des ??
         done : boolean()
-    },
+    }),
     // attachment : file,
     tags : array(string()),
     lid : string(),

@@ -9,6 +9,11 @@
       
     }
 
+    export type preDefLetterInp = {
+      
+      
+    }
+
     export type orgInp = {
       
       

@@ -8,7 +8,7 @@ export * from "./updatePredefletter.val.ts";
 export const updatePredefletterSetup = () =>
   coreApp.acts.setAct({
     type: "dynamic",
-    schema: "predefletter",
+    schema: "preDefLetter",
     fn: updatePredefletterFn,
     actName: "updatePredefletter",
     validator: updatePredefletterValidator(),

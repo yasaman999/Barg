@@ -7,13 +7,13 @@ export const addLetterValidator = () => {
         set: object({
             number : number(),
             subject : string(),
-            created_at : date(),
-            updated_at : date(),
+            created_at : optional(date()),
+            updated_at : optional(date()),
             delivered : boolean(),
-            is_end : {
+            is_end : object({
                 text : string(), // text || des ??
                 done : boolean()
-            },
+            }),
             tags : array(string()),
             lid : string()
         }),

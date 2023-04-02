@@ -1,5 +1,5 @@
 import { ActFn, ObjectId } from "../../../../deps.ts";
-import { getAtcsWithServices, org } from "../../../../mod.ts";
+import { getAtcsWithServices, letter } from "../../../../mod.ts";
 export const addLetterFn: ActFn = async (body) => {
     const acts = getAtcsWithServices();
 
@@ -18,7 +18,7 @@ export const addLetterFn: ActFn = async (body) => {
         
     } = body.details;
 
-    const createdLetter = await org.insertOne({
+    const createdLetter = await letter.insertOne({
         number,
         subject,
         created_at,
@@ -30,7 +30,7 @@ export const addLetterFn: ActFn = async (body) => {
     });
 
     return Object.keys(get).length != 0
-    ? await org.findOne({ _id: new ObjectId(createdLetter) }, get)
+    ? await letter.findOne({ _id: new ObjectId(createdLetter) }, get)
     : { _id: createdLetter };
      
 };

@@ -1,5 +1,5 @@
 import { ActFn, ObjectId } from "../../../../deps.ts";
-import { getAtcsWithServices, predefletter } from "../../../../mod.ts";
+import { getAtcsWithServices, preDefLetter } from "../../../../mod.ts";
 export const addPredefletterFn: ActFn = async (body) => {
     const acts = getAtcsWithServices();
 
@@ -13,14 +13,14 @@ export const addPredefletterFn: ActFn = async (body) => {
         
     } = body.details;
 
-    const createdPredefletter = await predefletter.insertOne({
+    const createdPredefletter = await preDefLetter.insertOne({
         title ,
         description,
         number
     });
 
     return Object.keys(get).length != 0
-    ? await predefletter.findOne({ _id: new ObjectId(createdPredefletter) }, get)
+    ? await preDefLetter.findOne({ _id: new ObjectId(createdPredefletter) }, get)
     : { _id: createdPredefletter };
      
 };

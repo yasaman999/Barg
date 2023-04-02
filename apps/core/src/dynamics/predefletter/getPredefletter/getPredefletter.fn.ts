@@ -2,7 +2,7 @@ import { predefletters } from "../../../../../../libs/dbs/schemas/core/mod.ts";
 import { throwError } from "../../../../../utils/throwError.ts";
 import { ActFn } from "../../../../deps.ts";
 import { ObjectId } from "../../../../deps.ts";
-import { predefletter } from "../../../../mod.ts";
+import { preDefLetter } from "../../../../mod.ts";
 export const getPredefletterFn: ActFn = async (body) => {
     const {
         set: {  
@@ -10,7 +10,7 @@ export const getPredefletterFn: ActFn = async (body) => {
         },
         get,
     } = body.details;
-    const foundedPredefletter = await predefletter.findOne({ _id: new ObjectId(_id) }, get);
+    const foundedPredefletter = await preDefLetter.findOne({ _id: new ObjectId(_id) }, get);
     !foundedPredefletter && throwError("predefletter not exist");
     return foundedPredefletter;
 
